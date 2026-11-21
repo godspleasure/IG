@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev. IG Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <style>
+      * {box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+         color: white;
+        }
+
+      body {background-color: rgb(0, 0, 40);}
+
+      html { scroll-behavior: smooth; }
+section, [id] { scroll-margin-top: 80px; }
+
+      header {
+        display: flex;
+             justify-content: space-between; 
+              background-color: orange;
+             align-items: center;
+             padding: 1rem;
+        width: 100%;
+        position: fixed;
+        top: 0;
+      }
+
+      .nav {
+        display: none;
+        justify-content: center;
+        position: absolute;
+        background-color: orange;
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+        gap: 1.5rem;
+        top: 60px;
+        left: 0;
+        width: 100%;
+           }
+
+      .nav.active {
+          display: flex;
+      }
+
+      header i {
+        font-size: 30px; color: white;
+      }
+
+      header div {
+        font-size: 20px; color: orange;
+        border-bottom: 1px solid white;
+        box-shadow: 1px 2px 5px;
+        border-radius: 5px;
+        background-color: rgb(0, 0, 30);
+        padding: 7px;
+        font-weight: 500;
+      }
+
+      header span {color: white;}
+
+      .nav a {
+        text-decoration: none;
+             color: rgb(0, 0, 30);
+        font-size: 23px;
+        font-weight: 500;
+        cursor: pointer;
+      }
+
+      .nav a:hover {color: rgb(90, 30, 60);}
+
+      #menuicon {
+  background: none;
+  border: none;
+  cursor: pointer;
+      }
+      
+      .fa-solid {
+        cursor: pointer;
+        color: rgb(0, 0, 30);
+      }
+
+      .name {
+        margin: 100px 0px 20px 30px;
+        
+      }
+
+      .name h1 {
+      font-weight: 900;
+        font-size: 40px;
+      }
+
+      .name span {
+        color: orange;
+      }
+
+      .hero-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 80px 90px;
+        margin-top: 50px;
+      }
+
+      .title {
+        width: 400px;
+        padding-top: 50px;
+        margin: 10px 0px 30px 15px;
+             }
+
+      .title span {
+        color: orange;
+      }
+
+      .contact-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 30px;
+      }
+
+      .contact-buttons a {
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+      }
+
+      .view {
+        background-color: orange;
+        border-radius: 10px;
+        padding: 10px;
+      }
+
+        .view:active, .contact:active {
+          transform: scale(0.98);
+          transition: transform 0.2s;
+        }
+
+      .contact {border: 1px solid white;
+        border-radius: 10px;
+        padding: 10px;
+      }
+
+      .profile-image {
+        border-radius: 150px;
+        background-image: url('https://i.ibb.co/CK3qPwMr/file-00000000dfc48210a17116a1b747e47a.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 280px;
+        height: 280px;
+      }
+
+      .about-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px 40px;
+        margin-top: 70px;
+        justify-content: center;
+                     }
+
+      .about {width: 300px;}
+
+      .about h2{
+        color: orange;
+        font-size: 15px;
+        text-align: center;
+        font-family: monospace;
+               }
+
+      .about p {
+        text-align: center;
+        margin: 15px;
+        color: gray;
+      }
+
+      .about span {font-weight: 500;}
+
+      .summary-card {
+        display: flex;
+        gap: 3px;
+        margin-top: 50px;
+      }
+
+      .summary {
+        text-align: center;
+        padding: 5px;
+        border-left: 3px solid orange;
+               }
+
+      .summary span {
+        color: orange;
+                    font-size: 20px;
+      font-weight: 900;
+      }
+
+      .summary p {
+        font-size: 11px;
+        color: grey;
+      }
+
+        .box-1 {
+          display: flex;
+        gap: 10px 20px;
+          text-align: center;
+          border-radius: 20px;
+          background-color: rgb(0,0,30);
+          width: 300px;
+          padding: 10px;
+          margin-top: 40px;
+        }
+
+      .box-1 p {
+        color: gray;
+      }
+
+      .box-1:hover, .skill-1:hover, .skill-2:hover, .skill-3:hover, .project-1:hover {
+        border: 1px solid orange;
+      }
+
+      .laptop-icon {
+        border: 1px solid lightblue;
+        border-radius: 7px;
+      background-color: rgb(255,170,0);
+      width: 60px;
+      height: 40px;
+        padding: 10px;
+      }
+
+      .skills-card {
+        background-color: rgb(0,0,30);
+        margin: 30px auto;
+        width: 350px;
+        padding: 10px;
+        margin-top: 90px;
+        margin-bottom: 60px;
+      }
+
+      .skills-heading {
+        margin-top: 50px;
+        margin-bottom: 30px;
+      }
+
+      .skills-heading h2{
+        color: orange;
+        font-size: 13px;
+        text-align: center;
+        font-family: monospace;
+      }
+
+      .skills-heading .big-text {
+        text-align: center;
+        font-size: 30px;
+        font-weight: 700;
+        font-family: times new roman;
+        margin: 10px;
+      }
+
+      .skills-heading .small-text {
+        text-align: center;
+        font-size: 12px;
+        color: grey;
+      }
+
+      .skills-box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px 10px;
+      }
+
+      .skills-1 {
+        border: 1px solid lightgrey;
+        border-radius: 20px;
+        width: 230px;
+        padding: 10px;
+        margin: 10px;
+      }
+
+      .skills-1 .frontend {
+        color: lightblue;
+        font-weight: 900;
+        font-size: 13px;
+        margin: 10px;
+      }
+
+      .skills-1 .skill {
+        border-bottom: 3px solid lightblue;
+        margin: 10px;
+        width: 200px;
+        padding: 15px;
+        text-align: center;
+      }
+
+      .skills-2 {
+        border: 1px solid lightgrey;
+        border-radius: 20px;
+        width: 230px;
+        padding: 10px;
+        margin: 10px;
+      }
+
+      .skills-2 .frontend {
+        color: purple;
+        font-weight: 900;
+        font-size: 13px;
+        margin: 10px;
+      }
+
+      .skills-2 .skill {
+        border-bottom: 3px solid purple;
+        margin: 10px;
+        width: 200px;
+        padding: 15px;
+        text-align: center;
+      }
+
+      .skills-3 {
+        border: 1px solid lightgrey;
+        border-radius: 20px;
+        width: 230px;
+        padding: 10px;
+        margin: 10px;
+      }
+
+      .skills-3 .frontend {
+        color: lightgreen;
+        font-weight: 900;
+        font-size: 13px;
+        margin: 10px;
+      }
+
+      .skills-3 .skill {
+        border-bottom: 3px solid lightgreen;
+        margin: 10px;
+        width: 200px;
+        padding: 15px;
+        text-align: center;
+      }
+
+        .skill p {
+          font-weight: 500;
+          font-size: 13px;
+        }
+
+      .skills-1:hover, .skills-2:hover, .skills-3:hover {
+        border: 1px solid orange;
+      }
+
+        .tags-card {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 30px;
+          margin-top: 20px;
+          margin-bottom: 50px;
+        }
+
+      .tags {
+        padding: 7px;
+        border-radius: 10px;
+        border: 1px solid gray;
+      }
+      .tags p {
+        font-size: 8px;
+        color: gray;
+      }
+
+      .tags:hover {
+        border: 1px solid orange;
+      }
+
+      .tags p:hover {
+        color: orange;
+      }
+
+      .project-card {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 00px;
+      }
+
+      .project-1 {
+          display: flex;
+        gap: 20px;
+          text-align: center;
+          border-radius: 20px;
+          background-color: rgb(0,0,30);
+          width: 350px;
+          padding: 10px;
+      }
+
+        .project-1 h4 {
+          font-family: times new roman;
+          font-size: 25px;
+          margin-bottom: 10px;
+        }
+      .project-1 p{
+        color: gray;
+      }
+
+      .number p{
+        font-family: times new roman;
+        color: gray;
+        font-size: 40px;
+        font-weight: 700;
+      }
+
+        .featured {
+          border-radius: 10px;
+          border: 1px solid orange;
+          height: 22px;
+          padding: 5px;
+        }
+
+      .featured p {
+        color: orange;
+        font-size: 10px;
+      }
+      
+      .in-progress {
+          border-radius: 10px;
+          border: 1px solid orange;
+          height: 32px;
+          padding: 5px;
+        width: 160px;
+        }
+
+      .in-progress p {
+        color: orange;
+        font-size: 10px;
+        text-align: left;
+      }
+      
+      .live-demo a {
+        text-decoration: none;
+        color: orange;
+        font-size: 10px;
+      }
+
+      .live-demo {
+        width: 190px;
+          height: 22px;
+          padding: 5px;
+        }
+
+      .live-demo:active {
+        transform: scale(0.98);
+        transition: transform 0.2s;
+      }
+
+      .career-card {
+        background-color: rgb(0,0,30);
+        padding: 10px;
+        margin: 30px auto;
+        margin-top: 90px;
+        margin-bottom: 60px;
+      }
+      
+      .all-career {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px 10px;
+        justify-content: center;
+        margin-bottom: 60px;
+      }
+
+      .career-1 .position {
+          display: flex;
+        gap: 30px;
+        margin: 15px 0px 20px 0px;
+      }
+
+      .position p{
+        font-size: 12px;
+      }
+
+        .position h4 {
+          font-size: 13px;
+          margin-bottom: 10px;
+        }
+
+      .status {
+        border: 1px solid orange;
+        border-radius: 10px;
+        padding: 5px;
+      }
+
+      .status p {
+        color: orange;
+        font-size: 12px;
+      }
+      
+      .timeline{
+        color: gray;
+      }
+
+        .career-1 h5 {
+          color: orange;
+          text-align: center;
+        }
+
+      .career-1 li, .career-2 li, .career-3 li {
+        color: gray;
+        font-size: 13px;
+        margin-top: 10px;
+        margin-left: 20px; 
+      }
+
+      .career-2 h5 {
+          color: orange;
+          text-align: center;
+        }
+
+        .career-2 .position {
+          display: flex;
+        gap: 15px;
+        margin: 15px 0px 20px 0px;
+        }
+
+      .career-1, .career-2, .career-3 {
+          border-radius: 20px;
+          background-color: rgb(0,0,30);
+          padding: 7px;
+          border: 1px solid gray;
+      }
+
+      .career-3 h5 {
+          color: orange;
+          text-align: center;
+        }
+
+      .career-3 .position {
+          display: flex;
+        gap: 55px;
+        margin: 15px 0px 20px 0px;
+      }
+
+      .career-1:hover, .career-2:hover, .career-3:hover {
+        border: 1px solid orange;
+      }
+
+        @media (min-width: 768px) 
+      {
+        .nav {
+          display: flex;
+          flex-direction: row;
+          justify-content: right;
+          padding-right: 30px;
+          top: 0px;
+          gap: 2.5rem;
+          position: static;
+          width: auto;
+          padding: 0;
+        }
+        
+        #menuicon {
+          display: none;
+        }
+
+        .name h1 {
+          font-size: 60px;
+          font-weight: 900;
+                 }
+
+        .name {
+          margin: 100px 0px 0px 150px;
+        }
+
+        .hero-section {
+          margin-top: 30px;
+        }
+
+        .about {
+          width: 400px
+        }
+
+        .summary-card {
+          gap: 10px;
+        }
+
+        .summary {
+          padding: 10px;
+        }
+
+        .summary span {
+          font-size: 35px;
+        }
+
+        .box-1 {
+          width: 400px;
+        }
+
+        .skills-card {
+          width: 800px;
+          padding: 15px;
+        }
+
+        .project-1 {
+          width: 700px;
+          padding: 30px;
+        }
+
+        .box-1:hover {
+        transform: translateY(-2px);
+      }
+
+        .skill-1:hover, .skill-2:hover, .skill-3:hover, .project-1:hover {
+        transform: translateY(-2px);
+      }
+
+        .in-progress {
+          height: 22px;
+        }
+
+        .career-card {
+          width: 800px;
+        }
+
+        .career-1 .position {
+          gap: 150px;
+        }
+
+        .career-2 .position {
+          gap: 130px;
+        }
+
+        .career-3 .position {
+          gap: 280px;
+        }
+
+        .career-1, .career-2, .career-3 {
+          width: 600px;
+          padding: 15px;
+        }
+      }
+      
+    </style>
+  </head>
+  <body>
+    <header>
+     <div>IG_Devs<span>&lt;/&gt;</span></div>
+
+      <button id="menuicon" aria-label="Open menu" aria-expanded="false">
+  <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav" id="navlinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#career">Career</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      
+    </header>
+
+    <main>
+      <section>
+
+        <div class="name">
+      <h1>
+        STEADFAST<br><span>GOD'SPLEASURE</span>
+      </h1>
+        </div>
+      </section>
+   
+      <section>
+      <div class="hero-section">
+        <div class="title"><h2>
+          <span>Software Engineer</span> & Digital Administrative Specialist
+        </h2>
+
+        <h4>
+          Building responsive web interfaces & managing portal solutions.
+        </h4>
+
+          <div class="contact-buttons">
+        <div class="view"><a href="#projects">View my Work</a></div>
+            
+        <div class="contact"><a href="https://wa.me/2348142917159" target="_blank">Contact Me</a></div>
+            
+        </div>
+          
+        </div>
+
+        <div class="profile-image">
+          
+        </div>
+
+        
+      </div>
+      </section>
+
+      <section>
+
+        <div class="about-section">
+
+          <div class="about" id="about">
+        <h2>
+          ABOUT ME
+        </h2>
+            <p>
+              I'm <span>Steadfast God'spleasure</span> — a self-driven frontend developer and digital services specialist passionate about building clean, functional web experiences and streamlining online operations.
+            </p>
+            <p>
+              With hands-on experience in HTML, CSS, JavaScript, and digital portal administration through IG ADMIN SERVICES, I bridge the gap between technical execution and operational efficiency. Whether it's crafting a responsive landing page, configuring web interfaces, or managing complex online registrations and document processing, I bring clarity, speed, and reliability to every project.
+            </p>
+            <p>
+              I'm constantly exploring how modern web technologies, Python automation, and AI tools can amplify productivity — integrating smart, practical workflows into everyday business processes to help individuals and organizations operate seamlessly.
+            </p>
+
+            <div class="summary-card">
+              <div class="summary">
+                <p><span>2+</span><br>Years Experience</p>
+                </div>
+
+              <div class="summary">
+                <p><span>100+</span><br>Clients Served</p>
+                </div>
+
+              <div class="summary">
+                <p><span>100%</span><br>Remote and Mobile Ready</p>
+                </div>
+              </div>
+            
+          </div>
+
+          <div class="about-2">
+            
+            <div class="box-1">
+
+              <div class="laptop-icon">
+                💻
+                </div>
+              
+              <div>
+                <h4>
+                Frontend Web Development
+              </h4>
+
+                <p>
+                  Building clean, responsive, mobile-first interfaces using HTML, CSS, and JavaScript — with strong attention to layout structure, speed, and usability.
+                </p>
+                </div>
+              
+              </div>
+
+            <div class="box-1">
+
+              <div class="laptop-icon">
+                🤝
+                </div>
+              
+              <div>
+                <h4>
+                Digital Services & Administration
+              </h4>
+
+                <p>
+                  Streamlining online portal registrations, official document processing, and client support through IG ADMIN SERVICES with speed, accuracy, and reliability.
+                </p>
+                </div>
+              
+            </div>
+
+            <div class="box-1">
+
+              <div class="laptop-icon">
+                🧠
+                </div>
+              
+              <div>
+                <h4>
+                AI & Workflow Automation
+              </h4>
+
+                <p>
+                  Leveraging AI tools, prompt engineering, and Python scripting to automate repetitive tasks, optimize workflows, and solve practical business problems.
+                </p>
+                </div>
+              
+            </div>
+            
+            </div>
+
+          </div>
+      </section>
+
+
+      <section>
+
+        <div class="skills-card" id="skills">
+
+          <div class="skills-heading">
+
+            <h2>
+              EXPERTISE
+            </h2>
+            <p class="big-text">
+              Skills & Toolbox
+            </p>
+
+            <p class="small-text">
+            A curated set of tools and technologies I work with daily to build clean web experiences and run efficient digital operations.
+            </p>
+            </div>
+
+          <div class="skills-box">
+
+            <div class="skills-1">
+              <p class="frontend">🎨 Frontend</p>
+              
+              <div class="skill">
+                
+              <p>Html</p>  
+              </div>
+
+              <div class="skill">
+              <p>Css</p>  
+              </div>
+
+              <div class="skill">
+              <p>Javascript</p>  
+              </div>
+
+              <div class="skill">
+              <p>Responsive Design</p>  
+              </div>
+
+              <div class="skill">
+              <p>UI Layout & Styling</p>  
+              </div>
+              
+            </div>
+            
+          
+
+
+          <div class="skills-2">
+              <p class="frontend">🛠️ Dev & CLI Tools</p>
+              
+              <div class="skill">
+                
+              <p>Git</p>  
+              </div>
+
+              <div class="skill">
+              <p>Github</p>  
+              </div>
+
+              <div class="skill">
+              <p>Linux/Termux</p>  
+              </div>
+
+              <div class="skill">
+              <p>Python Scripting</p>  
+              </div>
+
+              <div class="skill">
+              <p>Codepen/VS Code</p>  
+              </div>
+              
+            </div>
+
+            <div class="skills-3">
+              <p class="frontend">🤖 AI & Digital Ops</p>
+
+              <div class="skill">
+              <p>AI & Prompt Engineering</p>  
+              </div>
+              
+              <div class="skill">
+                
+              <p>Portal Administration</p>  
+              </div>
+
+              <div class="skill">
+              <p>Document Processing</p>  
+              </div>
+
+              <div class="skill">
+              <p>Google Workspace</p>  
+              </div>
+
+              <div class="skill">
+              <p>Client support & CRM</p>  
+              </div>
+              
+            </div>
+            
+          </div>
+
+          <div class="tags-card">
+          
+            <div class="tags">
+            <p>
+              Python Environments
+            </p>
+          </div>
+
+            <div class="tags">
+            <p>
+              Networking (TCP/UDP)
+            </p>
+            </div>
+
+            <div class="tags">
+            <p>
+              Data Entry
+            </p>
+            </div>
+
+            <div class="tags">
+            <p>
+              Workflow Automation
+            </p>
+            </div>
+
+            <div class="tags">
+            <p>
+            Online Registrations
+            </p>
+            </div>
+
+            <div class="tags">
+            <p>
+              Whatsapp Business
+            </p>
+            </div>
+            
+          </div>
+          
+      
+        </div>
+      </section>
+
+      <section>
+
+        <div class="skills-heading" id="projects">
+
+            <h2>
+              SELECTED WORK
+            </h2>
+            <p class="big-text">
+              Projects I've Built
+            </p>
+
+            <p class="small-text">
+              A handful of projects showcasing my frontend development capabilities, workflow automation, and attention to clean layout structure.
+            </p>
+            </div>
+
+        <div class="project-card">
+
+          <div class="project-1">
+
+              <div class="number">
+                <p>01</p>
+                </div>
+              
+              <div class="text">
+                <h4>
+                Portfolio Website
+              </h4>
+
+                <p>
+                  A responsive, dark-themed developer portfolio built from the ground up with clean semantic HTML, custom CSS Grid/Flexbox layouts, and smooth mobile-first viewport scaling.
+                </p>
+                </div>
+
+            <div class="featured">
+              <p>Featured</p>
+              </div>
+              
+              </div>
+
+          <div class="project-1">
+
+              <div class="number">
+                <p>02</p>
+                </div>
+              
+              <div class="text">
+                <h4>
+                Business Landing Page
+              </h4>
+
+                <p>
+                  A high-converting service landing page and client onboarding hub for IG ADMIN SERVICES, featuring interactive service catalogs, exam registration guides, and direct WhatsApp inquiry integration.
+                </p>
+                </div>
+
+            <div class="live-demo">
+              <a href="https://igdevs.vercel.app" target="_blank">Live Demo -> </a>
+              </div>
+              
+              </div>
+
+          <div class="project-1">
+
+              <div class="number">
+                <p>03</p>
+                </div>
+              
+              <div class="text">
+                <h4>
+                  Password Strength Analyzer
+              </h4>
+
+                <p>
+                  An interactive security utility that evaluates password complexity in real time, checking character entropy, length thresholds, and common vulnerability patterns with instant visual strength feedback.
+                </p>
+                </div>
+
+            <div class="in-progress">
+              <p>In Progress</p>
+              </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section id="career">
+
+        <div class="career-card">
+
+          <div class="skills-heading">
+
+            <h2>
+              CAREER
+            </h2>
+            <p class="big-text">
+              Work Experience
+            </p>
+
+            <p class="small-text">
+            A journey through roles that shaped my operational and technical skill set
+            </p>
+            </div>
+
+          <div class="all-career">
+          
+      <div class="career-1">
+              
+                <div class="position">
+                  <h4>
+                Frontend Web Developer
+              </h4>
+
+                  <div class="status">
+                    <p>Active</p>
+                    </div>
+
+                <p class="timeline">
+                  2026 - Present
+                </p>
+              </div>
+
+        <h5>
+          Freelance & Remote Clients
+        </h5>
+
+        <ul>
+          <li>
+            Building clean, responsive, mobile-first websites and landing pages using semantic HTML5, CSS3, and JavaScript.</li>
+
+          <li>Developing interactive web utilities—including security tools and custom portfolio interfaces—managed via Git and GitHub.</li>
+
+          <li>Focusing on dark-mode UI systems, flexible CSS Grid/Flexbox layouts, and fast load performance across devices.
+          </li>
+        </ul>
+        
+              </div>
+
+          <div class="career-2">
+              
+                <div class="position">
+                  <h4>
+                Founder & Digital Services Lead
+              </h4>
+
+                  <div class="status">
+                    <p>Active</p>
+                    </div>
+
+                <p class="timeline">
+                  2026 - Present
+                </p>
+              </div>
+
+        <h5>
+          IG Admin Services
+        </h5>
+
+        <ul>
+          <li>
+            Managing online academic portal registrations (JAMB, WAEC, NECO, NABTEB) and university admission processing with high accuracy.</li>
+<li>Handling official document formatting, CV design, affidavits, and digital client support remotely.</li>
+<li>Building and maintaining the business's web presence and client inquiry workflows.</li>
+        </ul>
+        
+              </div>
+
+          <div class="career-3">
+              
+                <div class="position">
+                  <h4>
+                Digital Portal & Cyber Café Assistant
+              </h4>
+
+                <p class="timeline">
+                  2025 - 2026
+                </p>
+              </div>
+
+        <h5>
+          Edcon Resources
+        </h5>
+
+        <ul>
+          <li>
+            Assisted walk-in clients with online portal applications, result verifications, and electronic form submissions.</li>
+<li>Prepared, formatted, and printed official documents, passport photographs, and graphic layouts using Microsoft Office and CorelDRAW.</li>
+<li>Resolved everyday technical and software configuration issues for desktop workstations and peripherals.</li>
+        </ul>
+        
+              </div>
+            </div>
+
+        </div>
+      </section>
+
+      <section id="contact">
+
+        <div class="skills-heading" id="projects">
+
+            <h2>
+              GET IN TOUCH
+            </h2>
+            <p class="big-text">
+              Let's Work Together
+            </p>
+
+            <p class="small-text">
+              Have a project in mind or need a virtual assistant? I'd love to hear from you.
+            </p>
+            </div>
+    </main>
+
+    <script>
+      const menuicon = document.getElementById ("menuicon");
+
+      const navlinks = document.getElementById ("navlinks")
+      menuicon.addEventListener("click", () => {
+  const open = navlinks.classList.toggle("active");
+  menuicon.setAttribute("aria-expanded", open);
+});
+    </script>
+  
+
+  </body>
+</html>
